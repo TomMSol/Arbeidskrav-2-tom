@@ -1,0 +1,7 @@
+alder = int(input('Hvilket år er du født? '))
+
+# regner ut
+alder_i_2024 = 2024 - alder
+
+# Alder under
+print(f'I løpet av 2024 blir du {alder_i_2024} år gammel.')
