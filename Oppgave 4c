@@ -1,0 +1,43 @@
+# Antall innbyggere i millioner
+data = {
+    "Norge": ["Oslo", 0.634],
+    "England": ["London", 8.982],
+    "Frankrike": ["Paris", 2.161],
+    "Italia": ["Roma", 2.873]
+}
+
+# Program for å finne hovedstad og innbyggertall
+def finn_hovedstad_og_innbyggere(land):
+    if land in data:
+        hovedstad, innbyggere = data[land]
+        print(hovedstad + " er hovedstaden i " + land + " og det er " + str(round(innbyggere, 3)) + " mill. innbyggere i " + hovedstad + ".")
+    else:
+        print("Landet " + land + " finnes ikke i databasen.")
+
+# Program for å legge til et nytt land
+def legg_til_nytt_land():
+    nytt_land = input("Skriv inn navnet på det nye landet så vi kan legge det inn i databasen vår: ")
+    if nytt_land in data:
+        print(nytt_land + " finnes allerede i databasen.")
+        return
+    hovedstad = input("Hva er hovedstaden i " + nytt_land + "? ")
+    innbyggere = input("Hvor mange millioner innbyggere er det i " + hovedstad + "? ")
+    try:
+        innbyggere = float(innbyggere)
+        data[nytt_land] = [hovedstad, innbyggere]
+        print(nytt_land + " med hovedstaden " + hovedstad + " og " + str(round(innbyggere, 3)) + " mill. innbyggere er lagt til i databasen.")
+    except ValueError:
+        print("Innbyggertall må være et tall. Forsøk igjen.")
+
+# Be brukeren om å skrive inn et land
+land = input("Skriv inn et land: ")
+
+# Skriv ut informasjon om landet
+finn_hovedstad_og_innbyggere(land)
+
+# Legg til et nytt land
+legg_til_nytt_land()
+
+# Skriv ut hele databasen
+print("Oppdatert database:")
+print(data)
