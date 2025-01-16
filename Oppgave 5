@@ -1,0 +1,30 @@
+import math
+
+
+def calculate_area_and_outer_perimeter(a, b):
+    # Radiusen av halv cirlcen
+    r = a / 2
+
+    # kalkulering
+    triangle_area = (a * b) / 2
+    semicircle_area = (math.pi * r ** 2) / 2
+    total_area = triangle_area + semicircle_area
+
+    # kalkulering 2
+    hypotenuse = math.sqrt(a ** 2 + b ** 2)
+    semicircle_perimeter = math.pi * r
+    outer_perimeter = b + hypotenuse + semicircle_perimeter
+
+    return total_area, outer_perimeter
+
+
+# definerer verdier
+a = float(input("Skriv inn lengden på a: "))
+b = float(input("Skriv inn lengden på b: "))
+
+# Beregning
+area, outer_perimeter = calculate_area_and_outer_perimeter(a, b)
+
+# resultat
+print(f"Arealet av figuren er {area:.2f}")
+print(f"Ytre omkrets av figuren er {outer_perimeter:.2f}")
