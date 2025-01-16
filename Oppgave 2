@@ -1,0 +1,11 @@
+import math  # Importerer math for å bruke funksjonen math.ceil
+
+# Skrive inn antall elever
+antall_elever = int(input("Skriv inn antall elever: "))
+
+# Total pizza, antall_elever * 0.25, math.ceil for å runde opp til nærmeste heltall
+
+antall_pizzaer = math.ceil(antall_elever * 0.25)
+
+# Skriver ut antall pizzaer som må handles inn
+print(f"Det må handles inn {antall_pizzaer} pizzaer til festen.")
