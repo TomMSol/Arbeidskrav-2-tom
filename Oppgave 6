@@ -1,0 +1,28 @@
+#jeg forto ikke helt, prøvde å finne løsninger
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definer funksjonen f(x)
+def f(x):
+    return -x**2 - 5
+
+# Lag en array med 200 punkter
+x = np.linspace(-10, 10, 200)
+
+#funksjonsverdiene til f(x)
+y = f(x)
+
+# Plot funksjonen, her måtte jeg søke en del, forsto ikke helt
+plt.plot(x, y, label='f(x) = -x^2 - 5')
+
+#tittle og label
+plt.title('Plot av funksjonen f(x) = -x^2 - 5')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+
+# Legg til rutenett og en legende
+plt.grid(True)
+plt.legend()
+
+# Vis plottet
+plt.show()
